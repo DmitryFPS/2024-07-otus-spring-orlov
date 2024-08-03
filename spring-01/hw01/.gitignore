@@ -1,7 +1,5 @@
-.idea
-out
 *.iml
 *.class
 *.mvn
-target
+target/
 .gitignore
