@@ -12,6 +12,7 @@
 
     <modules>
         <module>spring-01/hw01</module>
+        <module>spring-01/hw02</module>
     </modules>
 
     <properties>
@@ -23,6 +24,7 @@
         <opencsv.version>5.9</opencsv.version>
         <junit.version>5.10.2</junit.version>
         <mockito.version>5.10.0</mockito.version>
+        <mockito-junit.version>5.10.0</mockito-junit.version>
         <assertj.version>3.25.2</assertj.version>
         <lombok.version>1.18.32</lombok.version>
         <checkstyle-plugin.version>3.3.1</checkstyle-plugin.version>
@@ -64,6 +66,13 @@
                 <artifactId>mockito-core</artifactId>
                 <scope>test</scope>
                 <version>${mockito.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-junit-jupiter</artifactId>
+                <version>${mockito-junit.version}</version>
+                <scope>test</scope>
             </dependency>
 
             <dependency>
