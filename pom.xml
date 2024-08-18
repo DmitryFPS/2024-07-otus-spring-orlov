@@ -5,6 +5,13 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.4</version>
+        <relativePath/>
+    </parent>
+
     <groupId>ru.otus</groupId>
     <artifactId>2024-07-otus-spring-orlov</artifactId>
     <version>1.0</version>
@@ -13,6 +20,7 @@
     <modules>
         <module>spring-01/hw01</module>
         <module>spring-01/hw02</module>
+        <module>spring-01/hw03</module>
     </modules>
 
     <properties>
@@ -26,7 +34,6 @@
         <mockito.version>5.10.0</mockito.version>
         <mockito-junit.version>5.10.0</mockito-junit.version>
         <assertj.version>3.25.2</assertj.version>
-        <lombok.version>1.18.32</lombok.version>
         <checkstyle-plugin.version>3.3.1</checkstyle-plugin.version>
         <checkstyle.version>10.15.0</checkstyle.version>
         <checkstyle.config.url>
