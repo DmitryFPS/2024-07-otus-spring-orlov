@@ -11,18 +11,20 @@ import ru.otus.hw.domain.TestResult;
 
 import java.util.List;
 
-@RequiredArgsConstructor
 @Service
+@RequiredArgsConstructor
 public class TestServiceImpl implements TestService {
 
-    private final IOService ioService;
+    private final LocalizedIOService ioService;
 
     private final QuestionDao questionDao;
 
     @Override
-    public TestResult executeTestFor(final Student student) {
+    public TestResult executeTestFor(Student student) {
         ioService.printLine("");
-        ioService.printFormattedLine("Please answer the questions below%n");
+        ioService.printLineLocalized("TestService.answer.the.questions");
+        ioService.printLine("");
+
         final List<Question> questions = questionDao.findAll();
         final TestResult testResult = new TestResult(student);
 
@@ -32,11 +34,8 @@ public class TestServiceImpl implements TestService {
 
             final int numberAnswers = question.answers().size();
             final int answerNumber = ioService.readIntForRangeWithPrompt(
-                    1,
-                    numberAnswers,
-                    String.format("Enter the answer number from 1 to %s", numberAnswers),
-                    "You entered an incorrect response number"
-            );
+                    1, numberAnswers, String.format("Enter the answer number from 1 to %s", numberAnswers),
+                    "You entered an incorrect response number");
 
             final Answer answer = question.answers().get(answerNumber - 1);
             final boolean isAnswerValid = answer.isCorrect(); // Задать вопрос, получить ответ
