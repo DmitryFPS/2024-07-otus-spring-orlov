@@ -21,6 +21,7 @@
         <module>spring-01/hw01</module>
         <module>spring-01/hw02</module>
         <module>spring-01/hw03</module>
+        <module>spring-01/hw04</module>
     </modules>
 
     <properties>
@@ -36,6 +37,7 @@
         <assertj.version>3.25.2</assertj.version>
         <checkstyle-plugin.version>3.3.1</checkstyle-plugin.version>
         <checkstyle.version>10.15.0</checkstyle.version>
+        <spring.shell.version>3.2.6</spring.shell.version>
         <checkstyle.config.url>
             https://raw.githubusercontent.com/OtusTeam/Spring/master/checkstyle.xml
         </checkstyle.config.url>
@@ -94,6 +96,12 @@
                 <artifactId>lombok</artifactId>
                 <optional>true</optional>
                 <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring.shell.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
