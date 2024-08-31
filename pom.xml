@@ -22,6 +22,7 @@
         <module>spring-01/hw02</module>
         <module>spring-01/hw03</module>
         <module>spring-01/hw04</module>
+        <module>spring-02/hw05</module>
     </modules>
 
     <properties>
@@ -38,6 +39,9 @@
         <checkstyle-plugin.version>3.3.1</checkstyle-plugin.version>
         <checkstyle.version>10.15.0</checkstyle.version>
         <spring.shell.version>3.2.6</spring.shell.version>
+        <liquibase.version>4.29.1</liquibase.version>
+        <snakeyaml.version>2.2</snakeyaml.version>
+        <h2.version>2.2.220</h2.version>
         <checkstyle.config.url>
             https://raw.githubusercontent.com/OtusTeam/Spring/master/checkstyle.xml
         </checkstyle.config.url>
