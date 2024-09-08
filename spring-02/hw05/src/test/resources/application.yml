@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:educationalDatabase
+    driverClassName: org.h2.Driver
+    username: root
+    password: root
+  h2:
+    console:
+      enabled: true
+  liquibase:
+    enabled: true
+    changeLog: classpath:db/changelog/db.changelog-master-test.yaml
