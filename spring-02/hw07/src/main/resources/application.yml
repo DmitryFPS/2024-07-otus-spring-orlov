@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:educationalDatabase
+    driver-class-name: org.h2.Driver
+    username: root
+    password: root
+  sql:
+    init:
+      mode: never
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml

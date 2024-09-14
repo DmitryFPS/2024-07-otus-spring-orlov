@@ -6,7 +6,6 @@ import jakarta.persistence.TypedQuery;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import ru.otus.hw.entity.Comment;
-import ru.otus.hw.exceptions.EntityNotFoundException;
 
 import java.util.List;
 import java.util.Optional;
@@ -45,9 +44,7 @@ public class CommentRepositoryImpl implements CommentRepository {
 
     @Override
     public void deleteById(final Long id) {
-        final Comment comment = ofNullable(entityManager.find(Comment.class, id))
-                .orElseThrow(() ->
-                        new EntityNotFoundException("Комментарий с id %d для удаления, не найдена".formatted(id)));
+        final Comment comment = entityManager.find(Comment.class, id);
         entityManager.remove(comment);
     }
 }
