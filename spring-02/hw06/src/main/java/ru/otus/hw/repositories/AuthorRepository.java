@@ -1,0 +1,12 @@
+package ru.otus.hw.repositories;
+
+import ru.otus.hw.entity.Author;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface AuthorRepository {
+    List<Author> findAll();
+
+    Optional<Author> findById(final Long id);
+}
