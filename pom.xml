@@ -26,6 +26,7 @@
         <module>spring-02/hw06</module>
         <module>spring-02/hw07</module>
         <module>spring-02/hw08</module>
+        <module>spring-03/hw09</module>
     </modules>
 
     <properties>
