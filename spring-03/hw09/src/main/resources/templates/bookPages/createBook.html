@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List of all persons</title>
+    <style type="text/css">
+        body {
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<h3>Add Book:</h3>
+
+<form action="#" th:action="@{/book}" th:object="${createBook}" method="post">
+    <span>
+        <input type="submit" id="submitButton" value="Save">
+        <input type="reset" id="resetButton" value="Reset"/>
+        <a href="books.html" th:href="@{/}"><button type="button">Cancel</button></a>
+    </span>
+    <br>
+    <br>
+    <table>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><label for="title">
+                <input id="title" th:field="*{title}" required/>
+            </label></td>
+            <td>
+                <label for="author">
+                    <select th:field="*{authorId}" id="author" required>
+                        <option th:each="authorSelect : ${authors}" th:value="${authorSelect.id}"
+                                th:text="${authorSelect.fullName}"/>
+                    </select>
+                </label>
+            </td>
+            <td>
+                <label for="genre">
+                    <select th:field="*{genreIds}" id="genre" multiple required>
+                        <option th:each="genreSelect : ${genres}" th:value="${genreSelect.id}"
+                                th:text="${genreSelect.name}"/>
+                    </select>
+                </label>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+</html>

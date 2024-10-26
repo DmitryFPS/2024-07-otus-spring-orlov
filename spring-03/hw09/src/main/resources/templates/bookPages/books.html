@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List of all book</title>
+    <style type="text/css">
+        body {
+            padding: 50px;
+        }
+
+        .book {
+            border: 1px solid steelblue;
+            width: 300px;
+            border-collapse: collapse;
+        }
+
+        .book tr td, th {
+            padding: 5px;
+            border: 1px solid steelblue;
+        }
+
+        .book td:last-child, td:first-child {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<h3>Books:</h3>
+
+<span>
+    <a href="createBook.html" th:href="@{/book/form}" th:method="get"><button type="button">Add book</button></a>
+</span>
+<br>
+<br>
+
+<table class="book">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genres</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book : ${books}" th:object="${book}">
+        <td th:text="*{title}"></td>
+        <td th:text="*{author.fullName}"></td>
+
+        <td>
+            <ul>
+                <li th:each="genre : ${book.genres}" th:text="${genre.name}"></li>
+            </ul>
+        </td>
+
+        <td>
+            <form th:action="@{/book/{id}(id=${book.id})}" th:method="get">
+                <button>Edit</button>
+            </form>
+            <form th:action="@{/book/{id}(id=${book.id})}" th:method="delete">
+                <button>Delete</button>
+            </form>
+            <form th:action="@{/comment/{id}(id=${book.id})}" th:method="get">
+                <button>Comments</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<span>
+    <a href="../authorPages/authors.html" th:href="@{/author}"><button type="button">Authors</button></a>
+    <a href="../genrePages/genres.html" th:href="@{/genre}"><button type="button">Genres</button></a>
+</span>
+</body>
+</html>
