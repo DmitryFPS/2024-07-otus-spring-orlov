@@ -29,6 +29,7 @@
         <module>spring-03/hw09</module>
         <module>spring-03/hw10</module>
         <module>spring-03/hw11</module>
+        <module>spring-03/hw12</module>
     </modules>
 
     <properties>
@@ -56,6 +57,7 @@
         <lombok.mapstruct.binding.version>0.2.0</lombok.mapstruct.binding.version>
         <mongock.version>4.3.8</mongock.version>
         <flapdoodle.version>4.6.1</flapdoodle.version>
+        <spring-security.version>6.3.0</spring-security.version>
 
         <checkstyle.config.url>
             https://raw.githubusercontent.com/OtusTeam/Spring/master/checkstyle.xml
@@ -164,6 +166,12 @@
                 <groupId>de.flapdoodle.embed</groupId>
                 <artifactId>de.flapdoodle.embed.mongo.spring30x</artifactId>
                 <version>${flapdoodle.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-test</artifactId>
+                <version>${spring-security.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
