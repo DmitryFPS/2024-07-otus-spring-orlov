@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Genre</title>
+    <style type="text/css">
+        body {
+            padding: 50px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .genre {
+            border: 1px solid steelblue;
+            width: 300px;
+            border-collapse: collapse;
+        }
+
+        .genre tr td, th {
+            padding: 5px;
+            border: 1px solid steelblue;
+        }
+
+        .genre td:last-child, td:first-child {
+            width: auto;
+        }
+
+        span {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<h3>Genre:</h3>
+
+<table class="genre">
+    <thead>
+    <tr>
+        <th>Жанр</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:object="${genre}">
+        <td th:text="*{name}"></td>
+        <td>
+            <a href="/genre">Назад</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<span>
+    <a href="../bookPages/books.html" th:href="@{/book}"><button type="button">Books</button></a>
+</span>
+</body>
+</html>
