@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Author</title>
+    <style type="text/css">
+        body {
+            padding: 50px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .author {
+            border: 1px solid steelblue;
+            width: 300px;
+            border-collapse: collapse;
+        }
+
+        .author tr td, th {
+            padding: 5px;
+            border: 1px solid steelblue;
+        }
+
+        .author td:last-child, td:first-child {
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<h3>Author:</h3>
+
+<table class="author">
+    <thead>
+    <tr>
+        <th>ФИО</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:object="${author}">
+        <td th:text="*{fullName}"></td>
+        <td>
+            <a href="/author">Назад</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<span>
+    <a href="../bookPages/books.html" th:href="@{/book}"><button type="button">Books</button></a>
+</span>
+</body>
+</html>
