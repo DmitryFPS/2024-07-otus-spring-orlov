@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+
+<style>
+    h3 {
+        color: red;
+    }
+</style>
+
+<body>
+<h3 th:text="${error.statusCode}"></h3>
+<h3 th:text="${error.message}"></h3>
+<a href="/" th:href="@{/}">Обратно на домашнюю страницу</a>
+</body>
+</html>

@@ -30,6 +30,7 @@
         <module>spring-03/hw10</module>
         <module>spring-03/hw11</module>
         <module>spring-03/hw12</module>
+        <module>spring-04/hw13</module>
     </modules>
 
     <properties>
