@@ -1,0 +1,73 @@
+spring:
+
+  # Отключаю все
+  shell:
+    interactive:
+      enabled: false
+    noninteractive:
+      enabled: false
+    command:
+      version:
+        enabled: false
+
+  # Отключаю автоматический запуск Job-ов во время старта приложения
+  batch:
+    job:
+      enabled: false
+
+  # Mongo datasource
+  data:
+    mongodb:
+      host: localhost
+      port: 8099
+      database: mdb
+
+  # main
+  main:
+    allow-bean-definition-overriding: false
+
+  # H2 datasource
+  datasource:
+    url: jdbc:h2:mem:h2db
+    driver-class-name: org.h2.Driver
+    username: root
+    password: root
+
+  # H2
+  h2:
+    console.enabled: true
+
+  # sql
+  sql:
+    init:
+      mode: never
+
+  # jpa
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+  # liquibase
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-test-master.yaml
+
+# Настройка встраиваемого сервера Mongo
+de:
+  flapdoodle:
+    mongodb:
+      embedded:
+        version: 4.0.2
+
+# Настройка нужна для управлением миграцией баз данных в MongoDB
+mongock:
+  runner-type: "ApplicationRunner"
+  change-logs-scan-package: ru.otus.hw.mongock.changelog.test
+  mongo-db:
+    write-concern:
+      journal: false
+    read-concern: local
