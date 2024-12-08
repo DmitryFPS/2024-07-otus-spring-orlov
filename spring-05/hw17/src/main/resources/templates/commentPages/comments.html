@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List of all book</title>
+    <style type="text/css">
+        body {
+            padding: 50px;
+        }
+
+        .book {
+            border: 1px solid steelblue;
+            width: 300px;
+            border-collapse: collapse;
+        }
+
+        .book tr td, th {
+            padding: 5px;
+            border: 1px solid steelblue;
+        }
+
+        .book td:last-child, td:first-child {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<h3>Comments Book:</h3>
+
+<br>
+<br>
+
+<table class="book">
+    <thead>
+    <tr>
+        <th>Comments</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="comment : ${comments}" th:object="${comment}">
+        <td th:text="*{commentText}"></td>
+        <td>
+            <form th:action="@{/comment/{id}(id=${comment.id})}" th:method="delete">
+                <input type="hidden" name="bookId" th:value="${bookId}">
+                <button>Delete</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<form th:action="@{/comment/form/{id}(id=${bookId})}" th:method="get">
+    <button>Add new comment</button>
+</form>
+<br>
+<span>
+    <a href="../bookPages/books.html" th:href="@{/book}"><button type="button">Books</button></a>
+</span>
+</body>
+</html>
