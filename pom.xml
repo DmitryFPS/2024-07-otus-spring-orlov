@@ -33,6 +33,8 @@
         <module>spring-04/hw13</module>
         <module>spring-04/hw14</module>
         <module>spring-04/hw15</module>
+        <module>spring-05/hw16</module>
+        <module>spring-05/hw17</module>
     </modules>
 
     <properties>
