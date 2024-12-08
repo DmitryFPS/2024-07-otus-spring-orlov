@@ -1,0 +1,5 @@
+# Логи для Spring Integration
+logging:
+  level:
+    root: info
+    org.springframework.integration: info
