@@ -1,0 +1,50 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:educationalDatabase
+    driver-class-name: org.h2.Driver
+    username: root
+    password: root
+  sql:
+    init:
+      mode: never
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+  jmx:
+    enabled: true
+
+# Настройка эндпоинтов Spring Boot Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    logfile:
+      enabled: true
+  health:
+    defaults:
+      enabled: true
+
+logging:
+  file:
+    name: hw16.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n" # паттерн для вывода в консоль
+  level:
+    root: info
+    org.springframework.integration: debug
