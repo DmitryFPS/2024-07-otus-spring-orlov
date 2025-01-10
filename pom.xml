@@ -35,6 +35,7 @@
         <module>spring-04/hw15</module>
         <module>spring-05/hw16</module>
         <module>spring-05/hw17</module>
+        <module>spring-05/hw18</module>
     </modules>
 
     <properties>
@@ -63,6 +64,8 @@
         <mongock.version>4.3.8</mongock.version>
         <flapdoodle.version>4.6.1</flapdoodle.version>
         <spring-security.version>6.3.0</spring-security.version>
+        <resilience4j.version>3.1.2</resilience4j.version>
+        <resilience4j.springboot.version>2.2.0</resilience4j.springboot.version>
 
         <checkstyle.config.url>
             https://raw.githubusercontent.com/OtusTeam/Spring/master/checkstyle.xml
